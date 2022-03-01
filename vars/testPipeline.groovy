@@ -12,7 +12,7 @@ def call(body) {
     stages {
       stage('First') {
         steps {
-          sh 'Project Name: $FOO'
+          echo "Project Name: $FOO"
         }
       }
     }
