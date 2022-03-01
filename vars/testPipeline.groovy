@@ -4,7 +4,7 @@ def call(body) {
   body.delegate = dslParams
   body()
 
-  env.FOO = env.FOO ?: dslParams?.foo
+  env.FOO = env.FOO ?: dslParams?.bar
 
   pipeline {
     agent any
