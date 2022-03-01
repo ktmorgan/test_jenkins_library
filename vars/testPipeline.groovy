@@ -4,7 +4,7 @@ def call(body) {
   body.delegate = dslParams
   body()
 
-  env.FOO = $STAGE_NAME ?: dslParams?.baz
+  env.FOO = currentBuild.fullProjectName ?: dslParams?.baz
 
   pipeline {
     agent any
@@ -12,7 +12,7 @@ def call(body) {
     stages {
       stage('First') {
         steps {
-          sh 'Stage Name: $FOO'
+          sh 'Project Name: $FOO'
         }
       }
     }
