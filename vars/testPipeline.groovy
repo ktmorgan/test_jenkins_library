@@ -4,7 +4,7 @@ def call(body) {
   body.delegate = dslParams
   body()
 
-  env.FOO = STAGE_NAME ?: dslParams?.baz
+  env.FOO = $STAGE_NAME ?: dslParams?.baz
 
   pipeline {
     agent any
