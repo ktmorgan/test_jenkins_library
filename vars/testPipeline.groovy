@@ -12,7 +12,9 @@ def call(body) {
     stages {
       stage('First') {
         steps {
-          echo "Project Name: $FOO"
+          build(job: 'Bar',
+                parameters: [string(name: 'BRANCH_NAME', value: dslParams?.foo?.bar ?: "DEFAULT")]
+                wait: false)
         }
       }
     }
